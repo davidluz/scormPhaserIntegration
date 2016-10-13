@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Object Title</title>
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script> 
+<script type="text/javascript" src="js/phaser.min.js"></script> 
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/Preload.js"></script>
+<script type="text/javascript" src="js/Menu.js"></script>
+<script type="text/javascript" src="js/Instrucoes.js"></script>  
+<script type="text/javascript" src="js/GamePlay.js"></script> 
+<script type="text/javascript" src="js/GameOver.js"></script> 
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script> 
+
+ 
+<script type="text/javascript">
+
+var scorm = pipwerks.SCORM;  
+var lmsConnected = false;
+
+
+
+
+function handleError(msg){
+   alert(msg);
+   window.close();
+}
+
+
+function initCourse(){
+   lmsConnected = scorm.init();
+   if(lmsConnected){
+      var completionstatus = scorm.get("cmi.core.lesson_status");
+      if(completionstatus === "completed" || completionstatus === "passed"){
+      handleError("Você já fez essa atividade antes.\nNão é necessário continuar.");
+      }
+   }
+}
+
+
+function setComplete(){
+ 
+   if(lmsConnected){
+   var success = scorm.set("cmi.core.lesson_status", "completed");
+   if(success){
+    scorm.quit();
+    } 
+   }
+}
+
+
+$( document ).ready(function() {
+});
+
+</script>
+
+</head>
+
+<body>
+<div id="game-div"></div>
+</body>
+
+</html>
+
+
+

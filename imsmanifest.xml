@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<manifest 	identifier="scormpackagedefault" 
+			version="1.2" 
+			xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" 
+			xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd  http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd  http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+	
+	<metadata>
+		<schema>ADL SCORM</schema>
+		<schemaversion>1.2</schemaversion>
+		<adlcp:location>imsmetadata.xml</adlcp:location>
+	</metadata>
+
+  <organizations default="Escola de Design Instrucional">
+    <organization identifier="escoladi">
+    <title>Nome do Curso</title>
+      <item identifier="Item1" identifierref="Item1" isvisible="true">
+        <title>Nome do Objeto</title>
+      </item>
+    </organization>
+  </organizations>
+
+  <resources>
+    <resource identifier="Item1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="index.html"/>
+      <file href="css/style.css"/>
+      <file href="js/jquery-3.1.0.min.js"/>
+      <file href="js/phaser.min.js"/>
+      <file href="js/main.js"/>
+      <file href="js/GameOver.js"/>
+      <file href="js/GamePlay.js"/>
+      <file href="js/Instrucoes.js"/>
+      <file href="js/Menu.js"/>
+      <file href="js/Preload.js"/>
+      
+      <file href="imgs/preload_bar.png"/>
+	    </resource>
+
+  </resources>
+
+</manifest>
